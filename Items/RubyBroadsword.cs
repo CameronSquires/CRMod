@@ -30,6 +30,7 @@ namespace CRMod.Items
 
 		public override void AddRecipes()
 		{
+			Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.Ruby, 10);
             recipe.AddIngredient(ItemID.IronBar, 8);
             recipe.AddTile(TileID.Anvils);
