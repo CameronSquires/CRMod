@@ -9,12 +9,12 @@ namespace CRMod.Items
 		public override void SetStaticDefaults()
 		{
 			// DisplayName.SetDefault("RubyBroadsword"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-			Tooltip.SetDefault("This is a basic modded sword.");
+			Tooltip.SetDefault("A Blade of Pure Ruby.");
 		}
 
 		public override void SetDefaults()
 		{
-			Item.damage = 50;
+			Item.damage = 24;
 			Item.DamageType = DamageClass.Melee;
 			Item.width = 40;
 			Item.height = 40;
@@ -22,7 +22,7 @@ namespace CRMod.Items
 			Item.useAnimation = 20;
 			Item.useStyle = 1;
 			Item.knockBack = 6;
-			Item.value = 10000;
+			Item.value = Item.sellPrice(silver: 60);
 			Item.rare = 2;
 			Item.UseSound = SoundID.Item1;
 			Item.autoReuse = true;
@@ -31,9 +31,13 @@ namespace CRMod.Items
 		public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe();
-			recipe.AddIngredient(ItemID.DirtBlock, 10);
+			recipe.AddIngredient(ItemID.Ruby, 10);
+			recipe.AddIngredient(ItemID.IronBar, 8);
 			recipe.AddTile(TileID.WorkBenches);
 			recipe.Register();
+			Recipe recipe2 = CreateRecipe();
+			recipe2.AddIngredient(ItemID.Ruby, 10);
+			recipe2.AddIngredient(ItemID.LeadBar, 8);
 		}
 	}
 }
