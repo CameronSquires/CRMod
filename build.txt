@@ -1,0 +1,3 @@
+displayName = CR Mod
+author = CSquires and Rellsy
+version = 0.1
